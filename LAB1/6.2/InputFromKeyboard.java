@@ -11,6 +11,6 @@ public class InputFromKeyboard {
         double dHeight = keyboard.nextDouble();
 
         System.out.println("Mr/Ms. "+ strName + ", " + iAge +" years old. " + "Your height is " + dHeight +".");
-
+        
     }
 }
