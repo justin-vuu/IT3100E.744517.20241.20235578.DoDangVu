@@ -1,4 +1,12 @@
-Question: Is JAVA a Pass by Value or a Pass by Reference programming language? 
+1. The Media class should implement the Comparable interface because Media is the base class for all types of media DVD, CD, Book -> all class have natural ordering.
 
-==> Java is strictly pass-by-value. However, the way it handles object references can make it seem like pass-by-reference in certain cases.
-(For object references, it passes the value of the reference, leading to behaviors that resemble pass-by-reference)
+2. 
+@Override
+public int compareTo(Media other) {
+    int titleComparison = this.title.compareToIgnoreCase(other.title);
+    if (titleComparison != 0) {
+        return titleComparison; 
+    }
+    return Float.compare(this.cost, other.cost); 
+}
+3. No. Comparable interface allows 1 ordering only because only have 1 compareTo() method in a class.

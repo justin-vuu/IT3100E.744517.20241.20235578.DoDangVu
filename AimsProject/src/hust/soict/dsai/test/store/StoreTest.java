@@ -5,7 +5,7 @@
 package hust.soict.dsai.test.store;
 
 import hust.soict.dsai.aims.store.Store;
-import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.DigitalVideoDisc;
 
 /**
  *
@@ -19,12 +19,12 @@ public class StoreTest {
 
         // Test addDVD
         DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King");
-        store.addDVD(dvd1);
+        store.addMedia(dvd1);
         System.out.println("Added DVD: " + dvd1.getTitle());
         System.out.println("Items in store: " + store.getItemsInStore().size());
 
         // Test removeDVD
-        store.removeDVD(dvd1);
+        store.removeMedia(dvd1);
         System.out.println("Removed DVD: " + dvd1.getTitle());
         System.out.println("Items in store: " + store.getItemsInStore().size());
     }
