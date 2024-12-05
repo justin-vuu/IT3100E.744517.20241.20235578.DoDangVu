@@ -2,33 +2,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package hust.soict.dsai.aims.disc;
+package hust.soict.dsai.aims.media;
+
+import hust.soict.dsai.aims.Playable;
 
 /**
  *
  * @author ASUS
  */
-public class DigitalVideoDisc {
+public class DigitalVideoDisc extends Disc implements Playable {
     private String title; 
     private String category; 
     private String director; 
     private int length; 
-    private float cost;
+    //private float cost;
     private static int nbDigitalVideoDiscs = 0;
     private int id;
     {
         nbDigitalVideoDiscs++;
         this.id = nbDigitalVideoDiscs;
-    }
-    public int getId() {
-        return id;
-    }
-    public String getTitle() {
-        return title;
-    }
-
-    public String getCategory() {
-        return category;
     }
 
     public String getDirector() {
@@ -39,12 +31,6 @@ public class DigitalVideoDisc {
         return length;
     }
 
-    public float getCost() {
-        return cost;
-    }
-    public void setTitle(String title) {
-        this.title = title;
-    }
     public DigitalVideoDisc(String title) {
         this.title = title;
     }
@@ -82,5 +68,10 @@ public class DigitalVideoDisc {
     public String toString() {
         return "DVD [" + title + "] - [" + category + "] - [" 
                 + director + "] - [" + length + "] : [" + cost + "$]";
+    }
+
+    @Override public void play() { 
+        System.out.println("Playing DVD: " + this.getTitle()); 
+        System.out.println("DVD length: " + this.getLength());
     }
 }
