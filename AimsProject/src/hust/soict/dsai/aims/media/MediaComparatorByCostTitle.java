@@ -1,11 +1,17 @@
-package hust.soict.dsai.aims.media;
+package hust.soict.cybersec.aims.media;
 
 import java.util.Comparator;
 
-public class MediaComparatorByCostTitle  implements Comparator<Media> {
-    public int compare(Media media1, Media media2) {
-        return Comparator.comparing(Media::getCost)
-                .thenComparing(Media::getTitle)
-                .compare(media1, media2);
+public class MediaComparatorByCostTitle implements Comparator<Media>{
+
+    @Override
+    public int compare(Media o1, Media o2) {
+        // Compare by cost
+        int costComparison = Double.compare(o2.getCost(), o1.getCost());
+        if (costComparison != 0) {
+            return costComparison;
+        }
+        // Compare by title
+        return o1.getTitle().compareTo(o2.getTitle());        
     }
 }

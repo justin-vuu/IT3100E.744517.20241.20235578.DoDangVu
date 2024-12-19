@@ -1,45 +1,43 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package hust.soict.dsai.aims.media;
+package hust.soict.cybersec.aims.media;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
-/**
- *
- * @author ASUS
- */
-
- public class Book extends Media {
-    private int id;
-    private String title; private String category;
-    private float cost;
+public class Book extends Media {
+    
     private List<String> authors = new ArrayList<String>();
+    
+    // Constructor 
     public Book(String title) {
-        this.title = title;
+        super(title);
+    }
+    public Book(String title, String category) {
+        super(title, category);
+    }
+    public Book(String title, String category, float cost) {
+        super(title, category, cost);
     }
 
-    public Book(String title, String category, float cost) {
-        this.title = title;
-        this.category = category;
-        this.cost = cost;
-    }
+    // Add and remove author 
     public void addAuthor(String authorName) {
         if (!authors.contains(authorName)) {
-             authors.add(authorName);
+            authors.add(authorName);
+        } else {
+            System.out.println("This author has already been in the list!");
         }
     }
 
     public void removeAuthor(String authorName) {
         if (authors.contains(authorName)) {
             authors.remove(authorName);
+        } else {
+            System.out.println("No author has been found to remove!");
         }
-        
     }
+
     @Override
     public String toString() {
-        return "Book [" + title + "] - [" + category + "] : [" + cost + "$]";
+        return this.getId() + " - Book: " + this.getTitle() +
+                " - Category: " + this.getCategory() +
+                " - Cost: " + this.getCost() + "$";
     }
 }

@@ -1,31 +1,25 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package hust.soict.dsai.test.store;
-
-import hust.soict.dsai.aims.store.Store;
-import hust.soict.dsai.aims.media.DigitalVideoDisc;
-
-/**
- *
- * @author ASUS
- */
-
+package hust.soict.cybersec.test.store;
+import hust.soict.cybersec.aims.media.DigitalVideoDisc;
+import hust.soict.cybersec.aims.store.Store;
 
 public class StoreTest {
     public static void main(String[] args) {
         Store store = new Store();
-
-        // Test addDVD
-        DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King");
+        
+        DigitalVideoDisc dvd1 = new DigitalVideoDisc("The Lion King", "Animation", "Roger Allers", 87, 19.95f); 
         store.addMedia(dvd1);
-        System.out.println("Added DVD: " + dvd1.getTitle());
-        System.out.println("Items in store: " + store.getItemsInStore().size());
 
-        // Test removeDVD
-        store.removeMedia(dvd1);
-        System.out.println("Removed DVD: " + dvd1.getTitle());
-        System.out.println("Items in store: " + store.getItemsInStore().size());
+        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Star War", "Science Fiction", "George Lucas", 87, 24.95f); 
+        store.addMedia(dvd2);
+
+        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Aladin", "Animation", 18.99f);
+        store.addMedia(dvd3);
+
+        store.print();   
+
+        store.removeMedia(dvd2);
+
+        store.print();   
     }
+
 }
